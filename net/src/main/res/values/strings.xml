@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">net</string>
+    <string name="net_data_parse_error">数据解析异常</string>
+    <string name="net_http_error">请求失败，错误码：</string>
+    <string name="net_no_net_connect">请检查网络状态</string>
+    <string name="net_request_error">请求失败：</string>
+    <string name="net_time_out">请求超时</string>
+    <string name="net_unknown_error">未知错误</string>
+</resources>

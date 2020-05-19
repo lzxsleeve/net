@@ -1,0 +1,3 @@
+rootProject.name='NetModule'
+include ':app'
+include ':net'
