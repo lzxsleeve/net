@@ -49,5 +49,5 @@ dependencies {
     api 'com.alibaba:fastjson:1.2.68'//fastJson 库
     api 'org.ligboy.retrofit2:converter-fastjson-android:2.2.0'//转换器，请求结果转换成Model
 
-    implementation 'com.github.lzxsleeve:util:1.0.0'
+    implementation 'com.github.lzxsleeve:util:1.2.4'
 }
