@@ -33,10 +33,10 @@ import retrofit2.HttpException;
  * Create by lzx on 2019/8/19.
  */
 public abstract class NetCallback<T> extends DisposableObserver<T> implements NetExceptionStatus {
-    private LoadStatus mLoader;
-    private Context mContext;
     // 分页
     public int mPage = NetConfig.getInstance().mPage;
+    private LoadStatus mLoader;
+    private Context mContext;
 
     public NetCallback(LoadStatus loader) {
         mLoader = loader;
@@ -52,6 +52,22 @@ public abstract class NetCallback<T> extends DisposableObserver<T> implements Ne
     public NetCallback(LoadStatus loader, int page) {
         mLoader = loader;
         mPage = page;
+    }
+
+    /**
+     * 检查网络是否可用
+     */
+    @SuppressLint("MissingPermission")
+    private static boolean networkIsAvailable() {
+        ConnectivityManager service = (ConnectivityManager) UtilConfig.mContext.getSystemService(
+                Context.CONNECTIVITY_SERVICE);
+        if (service != null) {
+            NetworkInfo networkInfo = service.getActiveNetworkInfo();
+            if (networkInfo != null) {
+                return networkInfo.isAvailable();
+            }
+        }
+        return false;
     }
 
     @CallSuper
@@ -114,6 +130,7 @@ public abstract class NetCallback<T> extends DisposableObserver<T> implements Ne
         if (mLoader != null && mPage == NetConfig.getInstance().mPage) {
             mLoader.loadNoData(0, msg);
         }
+        // false会执行showToast,true则禁止
         return false;
     }
 
@@ -122,6 +139,7 @@ public abstract class NetCallback<T> extends DisposableObserver<T> implements Ne
         if (mLoader != null && mPage == NetConfig.getInstance().mPage) {
             mLoader.loadError(msg);
         }
+        // false会执行showToast,true则禁止
         return false;
     }
 
@@ -150,21 +168,5 @@ public abstract class NetCallback<T> extends DisposableObserver<T> implements Ne
     @Override
     public int getPage() {
         return mPage;
-    }
-
-    /**
-     * 检查网络是否可用
-     */
-    @SuppressLint("MissingPermission")
-    private static boolean networkIsAvailable() {
-        ConnectivityManager service = (ConnectivityManager) UtilConfig.mContext.getSystemService(
-                Context.CONNECTIVITY_SERVICE);
-        if (service != null) {
-            NetworkInfo networkInfo = service.getActiveNetworkInfo();
-            if (networkInfo != null) {
-                return networkInfo.isAvailable();
-            }
-        }
-        return false;
     }
 }
