@@ -46,7 +46,7 @@ dependencies {
     api 'com.squareup.retrofit2:retrofit:2.9.0'//导入retrofit
     api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'//配合Rxjava 使用
 
-    api 'com.alibaba:fastjson:1.2.70'//fastJson 库
+    api 'com.alibaba:fastjson:1.2.71'//fastJson 库
     api 'org.ligboy.retrofit2:converter-fastjson-android:2.2.0'//转换器，请求结果转换成Model
 
     implementation 'com.github.lzxsleeve:util:1.2.4'
