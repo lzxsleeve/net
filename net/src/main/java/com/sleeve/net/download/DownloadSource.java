@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
 
-import io.reactivex.ObservableSource;
-import io.reactivex.Observer;
+import io.reactivex.rxjava3.core.ObservableSource;
+import io.reactivex.rxjava3.core.Observer;
 import okhttp3.ResponseBody;
 
 /**

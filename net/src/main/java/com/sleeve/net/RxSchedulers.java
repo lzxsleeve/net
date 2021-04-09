@@ -1,12 +1,10 @@
 package com.sleeve.net;
 
-import io.reactivex.ObservableTransformer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.ObservableTransformer;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /**
- * 说明
- * <p>
  * Create by lzx on 2019/8/19.
  */
 public class RxSchedulers {

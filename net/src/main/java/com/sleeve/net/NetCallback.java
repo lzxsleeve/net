@@ -24,7 +24,7 @@ import java.util.concurrent.TimeoutException;
 
 import javax.net.ssl.SSLException;
 
-import io.reactivex.observers.DisposableObserver;
+import io.reactivex.rxjava3.observers.DisposableObserver;
 import retrofit2.HttpException;
 
 /**

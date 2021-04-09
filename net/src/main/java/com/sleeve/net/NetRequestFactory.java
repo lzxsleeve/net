@@ -6,11 +6,11 @@ import com.sleeve.net.download.DownloadSource;
 import java.util.List;
 import java.util.Map;
 
-import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Function;
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.ObservableSource;
+import io.reactivex.rxjava3.functions.Function;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import okhttp3.MultipartBody;
 import okhttp3.ResponseBody;
 import retrofit2.Response;

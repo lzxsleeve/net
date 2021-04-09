@@ -10,7 +10,7 @@ import com.sleeve.net.throwable.NoDataException;
 import com.sleeve.net.throwable.OtherCodeException;
 import com.sleeve.util.UtilConfig;
 
-import io.reactivex.functions.Function;
+import io.reactivex.rxjava3.functions.Function;
 import retrofit2.Response;
 
 /**

@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.fastjson.FastJsonConverterFactory;
 
 /**
@@ -24,7 +24,7 @@ public class NetRetrofitFactory {
     private static class SingleHolder {
         private static final Retrofit INSTANCE = new Retrofit.Builder()
                 .baseUrl(NetConfig.getInstance().getHostName())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                 .addConverterFactory(FastJsonConverterFactory.create())
                 .client(NetOkHttpClient.getInstance().build())
                 .build();
@@ -37,7 +37,7 @@ public class NetRetrofitFactory {
     private static class SingleDownloadHolder {
         private static final Retrofit DOWNLOAD_INSTANCE = new Retrofit.Builder()
                 .baseUrl(NetConfig.getInstance().getHostName())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                 .addConverterFactory(FastJsonConverterFactory.create())
                 .client(new OkHttpClient.Builder()
                         .connectTimeout(NetOkHttpClient.TIMEOUT, TimeUnit.SECONDS)
